@@ -280,7 +280,7 @@ uncountable(
     'equipment',
     'fish',
     'information',
-    'jeans'
+    'jeans',
     'money',
     'rice',
     'series',
