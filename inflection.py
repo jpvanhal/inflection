@@ -99,14 +99,14 @@ def camelize(string, uppercase_first_letter=True):
         >>> camelize("device_type", False)
         "deviceType"
 
-    `camelize` can be though as a inverse of :func:`underscore`, although
+    :func:`camelize` can be though as a inverse of :func:`underscore`, although
     there are some cases where that does not hold::
 
         >>> camelize(underscore("IOError"))
         "IoError"
 
-    :param uppercase_first_letter: if set to `True` `camelize` converts
-        strings to UpperCamelCase. If set to `False` `camelize` products
+    :param uppercase_first_letter: if set to `True` :func:`camelize` converts
+        strings to UpperCamelCase. If set to `False` :func:`camelize` produces
         lowerCamelCase. Defaults to `True`.
     """
     if uppercase_first_letter:
