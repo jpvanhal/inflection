@@ -52,6 +52,9 @@ def irregular(s, p):
     :param s: irregular in singular form
     :param p: irregular in plural form
     """
+    def caseinsensitive(string):
+        return ''.join('[' + char + char.upper() + ']' for char in string)
+
     if s in _uncountables:
         _uncountables.remove(s)
     if p in _uncountables:
@@ -61,17 +64,17 @@ def irregular(s, p):
         plural(r"({0}){1}$".format(p[0], p[1:]), r'\1' + p[1:])
         singular(r"({0}){1}$".format(p[0], p[1:]), r'\1' + s[1:])
     else:
-        plural(r"{0}(?i){1}$".format(s[0].upper(), s[1:]),
+        plural(r"{0}{1}$".format(s[0].upper(), caseinsensitive(s[1:])),
             p[0].upper() + p[1:], flags=0)
-        plural(r"{0}(?i){1}$".format(s[0].lower(), s[1:]),
+        plural(r"{0}{1}$".format(s[0].lower(), caseinsensitive(s[1:])),
             p[0].lower() + p[1:], flags=0)
-        plural(r"{0}(?i){1}$".format(p[0].upper(), p[1:]),
+        plural(r"{0}{1}$".format(p[0].upper(), caseinsensitive(p[1:])),
             p[0].upper() + p[1:], flags=0)
-        plural(r"{0}(?i){1}$".format(p[0].lower(), p[1:]),
+        plural(r"{0}{1}$".format(p[0].lower(), caseinsensitive(p[1:])),
             p[0].lower() + p[1:], flags=0)
-        singular(r"{0}(?i){1}$".format(p[0].upper(), p[1:]),
+        singular(r"{0}{1}$".format(p[0].upper(), caseinsensitive(p[1:])),
             s[0].upper() + s[1:], flags=0)
-        singular(r"{0}(?i){1}$".format(p[0].lower(), p[1:]),
+        singular(r"{0}{1}$".format(p[0].lower(), caseinsensitive(p[1:])),
             s[0].lower() + s[1:], flags=0)
 
 
