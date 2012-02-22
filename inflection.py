@@ -1,4 +1,15 @@
+"""
+    inflection
+    ~~~~~~~~~~~~
+
+    A port of Ruby on Rails' inflector to Python.
+
+    :copyright: (c) 2012 by Janne Vanhala
+    :license: MIT, see LICENSE for more details.
+"""
 import re
+
+__version__ = '0.1.0'
 
 _plurals = []
 _singulars = []
