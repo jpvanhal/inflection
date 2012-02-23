@@ -8,6 +8,7 @@ API
 .. autofunction:: camelize
 .. autofunction:: dasherize
 .. autofunction:: humanize
+.. autofunction:: ordinal
 .. autofunction:: ordinalize
 .. autofunction:: pluralize
 .. autofunction:: singularize
