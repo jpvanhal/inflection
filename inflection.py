@@ -180,8 +180,8 @@ def foreign_key():
 def humanize(word):
     """
     Capitalizes the first word and turns underscores into spaces and strips a
-    trailing "_id", if any. Like :func:`titleize`, this is meant for creating
-    pretty output.
+    trailing ``"_id"``, if any. Like :func:`titleize`, this is meant for
+    creating pretty output.
 
     Examples::
 
@@ -203,6 +203,7 @@ def ordinal(number):
     in an ordered sequence such as 1st, 2nd, 3rd, 4th.
 
     Examples::
+
         >>> ordinal(1)
         "st"
         >>> ordinal(2)
