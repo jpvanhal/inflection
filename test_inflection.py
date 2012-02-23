@@ -265,7 +265,7 @@ def test_pluralize_plural(singular, plural):
 
 
 @pytest.mark.parametrize(("before", "titleized"), MIXTURE_TO_TITLEIZED)
-def test_pluralize_plural(before, titleized):
+def test_titleize(before, titleized):
     assert titleized == inflection.titleize(before)
 
 
