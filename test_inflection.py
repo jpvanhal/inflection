@@ -138,7 +138,7 @@ def test_pluralize_empty_string():
 
 
 @pytest.mark.parametrize(("word", ),
-    [(word,) for word in inflection._uncountables])
+    [(word,) for word in inflection.UNCOUNTABLES])
 def test_uncountability(word):
     assert word == inflection.singularize(word)
     assert word == inflection.pluralize(word)
@@ -149,7 +149,7 @@ def test_uncountable_word_is_not_greedy():
     uncountable_word = "ors"
     countable_word = "sponsor"
 
-    inflection._uncountables.add(uncountable_word)
+    inflection.UNCOUNTABLES.add(uncountable_word)
     try:
         assert uncountable_word == inflection.singularize(uncountable_word)
         assert uncountable_word == inflection.pluralize(uncountable_word)
@@ -159,7 +159,7 @@ def test_uncountable_word_is_not_greedy():
         assert "sponsors" == inflection.pluralize(countable_word)
         assert "sponsor" == inflection.singularize(inflection.pluralize(countable_word))
     finally:
-        inflection._uncountables.remove(uncountable_word)
+        inflection.UNCOUNTABLES.remove(uncountable_word)
 
 
 @pytest.mark.parametrize(("singular", "plural"), SINGULAR_TO_PLURAL)
