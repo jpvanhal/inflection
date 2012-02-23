@@ -162,10 +162,6 @@ def camelize(string, uppercase_first_letter=True):
         return string[0].lower() + camelize(string)[1:]
 
 
-def classify():
-    pass
-
-
 def dasherize(word):
     """Replace underscores with dashes in the string.
 
@@ -259,10 +255,6 @@ def singularize(word):
         if re.search(rule, word):
             return re.sub(rule, replacement, word)
     return word
-
-
-def tableize():
-    pass
 
 
 def titleize():
