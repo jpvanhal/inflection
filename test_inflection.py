@@ -121,6 +121,12 @@ CAMEL_TO_UNDERSCORE_WITHOUT_REVERSE = (
     ("HTML",                  "html"),
 )
 
+UNDERSCORE_TO_HUMAN = (
+    ("employee_salary",       "Employee salary"),
+    ("employee_id",           "Employee"),
+    ("underground",           "Underground"),
+)
+
 UNDERSCORES_TO_DASHES = (
     ("street",                "street"),
     ("street_address",        "street-address"),
@@ -198,6 +204,13 @@ def test_camelize_with_underscores():
 )
 def test_underscore(camel, underscore):
     assert underscore == inflection.underscore(camel)
+
+
+@pytest.mark.parametrize(("underscore", "human"),
+    UNDERSCORE_TO_HUMAN
+)
+def test_humanize(underscore, human):
+    assert human == inflection.humanize(underscore)
 
 
 @pytest.mark.parametrize(("input", "expected"), UNDERSCORES_TO_DASHES)

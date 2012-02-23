@@ -181,8 +181,24 @@ def foreign_key():
     pass
 
 
-def humanize():
-    pass
+def humanize(word):
+    """
+    Capitalizes the first word and turns underscores into spaces and strips a
+    trailing "_id", if any. Like :func:`titleize`, this is meant for creating
+    pretty output.
+
+    Examples::
+
+        >>> humanize("employee_salary")
+        "Employee salary"
+        >>> humanize("author_id")
+        "Author"
+    """
+    word = re.sub(r"_id$", "", word)
+    word = word.replace('_', ' ')
+    word = re.sub(r"(?i)([a-z\d]*)", lambda match: match.group(1).lower(), word)
+    word = re.sub(r"^\w", lambda match: match.group(0).upper(), word)
+    return word
 
 
 def ordinalize():
