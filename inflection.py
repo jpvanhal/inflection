@@ -178,10 +178,6 @@ def dasherize(word):
     return word.replace('_', '-')
 
 
-def foreign_key():
-    pass
-
-
 def humanize(word):
     """
     Capitalize the first word and turn underscores into spaces and strip a
