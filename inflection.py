@@ -259,8 +259,28 @@ def ordinalize(number):
     return "%s%s" % (number, ordinal(number))
 
 
-def parameterize():
-    pass
+def parameterize(string, separator='-'):
+    """
+    Replace special characters in a string so that it may be used as part of a
+    'pretty' URL.
+
+    Example::
+
+        >>> parameterize(u"Donald E. Knuth")
+        'donald-e-knuth'
+
+    """
+    string = transliterate(string)
+    # Turn unwanted chars into the separator
+    string = re.sub(r"(?i)[^a-z0-9\-_]+", separator, string)
+    if separator:
+        re_sep = re.escape(separator)
+        # No more than one of the separator in a row.
+        string = re.sub(r'%s{2,}' % re_sep, separator, string)
+        # Remove leading/trailing separator.
+        string = re.sub(r"(?i)^{0}|{0}$".format(re_sep), '', string)
+
+    return string.lower()
 
 
 def pluralize(word):
