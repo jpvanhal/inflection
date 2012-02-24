@@ -1,0 +1,2 @@
+include README.rst LICENSE HISTORY.rst test_inflection.py
+
