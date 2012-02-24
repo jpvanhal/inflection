@@ -34,6 +34,7 @@ API Documentation
 .. autofunction:: humanize
 .. autofunction:: ordinal
 .. autofunction:: ordinalize
+.. autofunction:: parameterize
 .. autofunction:: pluralize
 .. autofunction:: singularize
 .. autofunction:: titleize
