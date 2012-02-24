@@ -18,6 +18,7 @@ setup(
     author='Janne Vanhala',
     author_email='janne.vanhala@gmail.com',
     url='http://github.com/jpvanhal/inflection',
+    license=open('LICENSE').read(),
     py_modules=['inflection'],
     zip_safe=False,
     classifiers=(
