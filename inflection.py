@@ -5,6 +5,8 @@
     A port of Ruby on Rails' inflector to Python.
 
     :copyright: (c) 2012 by Janne Vanhala
+    :copyright: (c) 2005-2012 by David Heinemeier Hansson
+
     :license: MIT, see LICENSE for more details.
 """
 import re
