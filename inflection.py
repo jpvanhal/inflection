@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
     inflection
     ~~~~~~~~~~~~
@@ -10,6 +11,7 @@
     :license: MIT, see LICENSE for more details.
 """
 import re
+import unicodedata
 
 __version__ = '0.1.0'
 
@@ -339,8 +341,21 @@ def titleize(word):
     )
 
 
-def transliterate():
-    pass
+def transliterate(string):
+    """
+    Replace non-ASCII characters with an ASCII approximation. If no
+    approximation exists, the non-ASCII character is ignored. The string must
+    be ``unicode``.
+
+    Examples::
+
+        >>> transliterate(u'älämölö')
+        'alamolo'
+        >>> transliterate(u'Ærøskøbing')
+        'rskbing'
+
+    """
+    return unicodedata.normalize('NFKD', string).encode('ascii', 'ignore')
 
 
 def underscore(word):
