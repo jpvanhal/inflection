@@ -10,7 +10,7 @@ except ImportError:
 
 
 setup(
-    name='inflection',
+    name='Inflection',
     version=inflection.__version__,
     description="A port of Ruby on Rails inflector to Python",
     long_description=open('README.rst').read() + '\n\n' +
