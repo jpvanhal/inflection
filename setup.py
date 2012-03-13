@@ -14,7 +14,7 @@ setup(
     version=inflection.__version__,
     description="A port of Ruby on Rails inflector to Python",
     long_description=open('README.rst').read() + '\n\n' +
-                     open('HISTORY.rst').read(),
+                     open('CHANGES.rst').read(),
     author='Janne Vanhala',
     author_email='janne.vanhala@gmail.com',
     url='http://github.com/jpvanhal/inflection',
