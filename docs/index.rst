@@ -42,7 +42,7 @@ API Documentation
 .. autofunction:: underscore
 
 
-.. include:: ../HISTORY.rst
+.. include:: ../CHANGES.rst
 
 
 License
