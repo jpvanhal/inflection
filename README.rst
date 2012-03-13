@@ -1,4 +1,4 @@
-inflection
+Inflection
 ==========
 
 |build status|_
@@ -7,7 +7,12 @@ inflection
    :alt: Build Status
 .. _build status: http://travis-ci.org/jpvanhal/inflection
 
-A port of Ruby on Rails' inflector to Python.
+Inflection is a string transformation library.  It singularizes and pluralizes
+English words, and transforms strings from CamelCase to underscored string.
+Inflection is a port of `Ruby on Rails`_' `inflector`_ to Python.
+
+.. _Ruby on Rails: http://rubyonrails.org
+.. _inflector: http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html
 
 Resources
 ---------
