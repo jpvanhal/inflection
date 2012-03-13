@@ -21,7 +21,7 @@ class PyTest(Command):
 
 
 setup(
-    name='Inflection',
+    name='inflection',
     version=inflection.__version__,
     description="A port of Ruby on Rails inflector to Python",
     long_description=open('README.rst').read() + '\n\n' +
