@@ -1,2 +1,2 @@
-include README.rst LICENSE HISTORY.rst test_inflection.py
+include README.rst LICENSE CHANGES.rst test_inflection.py
 
