@@ -1,9 +1,9 @@
 language: python
 python:
-  - 2.5
   - 2.6
   - 2.7
-install:
-  - pip install -q -r dev_requirements.txt --use-mirrors
-script:
-  - python setup.py test
+  - pypy
+  - 3.3
+before_script:
+  - pip install -r requirements.txt
+script: py.test
