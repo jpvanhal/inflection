@@ -365,12 +365,13 @@ def transliterate(string):
     Examples::
 
         >>> transliterate(u'älämölö')
-        'alamolo'
+        u'alamolo'
         >>> transliterate(u'Ærøskøbing')
-        'rskbing'
+        u'rskbing'
 
     """
-    return unicodedata.normalize('NFKD', string).encode('ascii', 'ignore')
+    normalized = unicodedata.normalize('NFKD', string)
+    return normalized.encode('ascii', 'ignore').decode('ascii')
 
 
 def underscore(word):
