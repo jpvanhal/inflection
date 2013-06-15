@@ -19,7 +19,6 @@ Here you can see the full list of changes between each Inflection release.
 
 - Fixed some files not included in the distribution package.
 
-
 0.1.0 (February 24, 2012)
 +++++++++++++++++++++++++
 
