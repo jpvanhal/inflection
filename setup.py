@@ -1,24 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from setuptools import setup, Command
-import subprocess
+from setuptools import setup
 import inflection
-
-
-class PyTest(Command):
-    user_options = []
-
-    def initialize_options(self):
-        pass
-
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        errno = subprocess.call(['py.test'])
-        raise SystemExit(errno)
-
 
 setup(
     name='inflection',
@@ -34,7 +18,6 @@ setup(
     license='MIT',
     py_modules=['inflection'],
     zip_safe=False,
-    cmdclass={'test': PyTest},
     classifiers=(
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
