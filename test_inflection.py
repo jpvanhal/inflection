@@ -255,6 +255,13 @@ UNDERSCORES_TO_DASHES = (
     ("person_street_address", "person-street-address"),
 )
 
+STRING_TO_TABLEIZE = (
+    ("person", "people"),
+    ("Country", "countries"),
+    ("ChildToy", "child_toys"),
+    ("_RecipeIngredient", "_recipe_ingredients"),
+)
+
 
 def test_pluralize_plurals():
     assert "plurals" == inflection.pluralize("plurals")
@@ -387,3 +394,7 @@ def test_ordinalize(number, ordinalized):
 @pytest.mark.parametrize(("input", "expected"), UNDERSCORES_TO_DASHES)
 def test_dasherize(input, expected):
     assert inflection.dasherize(input) == expected
+
+@pytest.mark.parametrize(("string", "tableized"), STRING_TO_TABLEIZE)
+def test_tableize(string, tableized):
+    assert inflection.tableize(string) == tableized
