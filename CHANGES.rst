@@ -3,6 +3,11 @@ Changelog
 
 Here you can see the full list of changes between each Inflection release.
 
+0.3.0 (March 1, 2015)
++++++++++++++++++++++
+
+- Added `tableize()` function.
+
 0.2.1 (September 3, 2014)
 +++++++++++++++++++++++++
 
