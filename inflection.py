@@ -193,8 +193,8 @@ def humanize(word):
     """
     word = re.sub(r"_id$", "", word)
     word = word.replace('_', ' ')
-    word = re.sub(r"(?i)([a-z\d]*)", lambda match: match.group(1).lower(), word)
-    word = re.sub(r"^\w", lambda match: match.group(0).upper(), word)
+    word = re.sub(r"(?i)([a-z\d]*)", lambda m: m.group(1).lower(), word)
+    word = re.sub(r"^\w", lambda m: m.group(0).upper(), word)
     return word
 
 
@@ -335,7 +335,7 @@ def tableize(word):
     """
     Create the name of a table like Rails does for models to table names. This
     method uses the :func:`pluralize` method on the last word in the string.
-    
+
     Examples::
 
         >>> tableize('RawScaledScorer')
