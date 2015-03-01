@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-import inflection
 import pytest
 
+import inflection
 
 SINGULAR_TO_PLURAL = (
     ("search", "searches"),
