@@ -39,6 +39,7 @@ API Documentation
 .. autofunction:: parameterize
 .. autofunction:: pluralize
 .. autofunction:: singularize
+.. autofunction:: tableize
 .. autofunction:: titleize
 .. autofunction:: transliterate
 .. autofunction:: underscore
