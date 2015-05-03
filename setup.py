@@ -19,7 +19,7 @@ setup(
     license='MIT',
     py_modules=['inflection'],
     zip_safe=False,
-    classifiers=(
+    classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Natural Language :: English',
@@ -32,5 +32,5 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: Implementation :: PyPy',
-    ),
+    ],
 )
