@@ -73,6 +73,7 @@ SINGULAR_TO_PLURAL = (
     ("photo", "photos"),
     ("buffalo", "buffaloes"),
     ("tomato", "tomatoes"),
+    ("potato", "potatoes"),
     ("dwarf", "dwarves"),
     ("elf", "elves"),
     ("information", "information"),
