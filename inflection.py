@@ -415,6 +415,7 @@ def underscore(word):
 
 _irregular('person', 'people')
 _irregular('man', 'men')
+_irregular('human', 'humans')
 _irregular('child', 'children')
 _irregular('sex', 'sexes')
 _irregular('move', 'moves')
