@@ -12,7 +12,7 @@
 import re
 import unicodedata
 
-__version__ = '0.3.0'
+__version__ = '0.3.1'
 
 PLURALS = [
     (r"(?i)(quiz)$", r'\1zes'),
