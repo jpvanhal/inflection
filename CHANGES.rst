@@ -3,6 +3,13 @@ Changelog
 
 Here you can see the full list of changes between each Inflection release.
 
+0.3.1 (May 3, 2015)
+^^^^^^^^^^^^^^^^^^^
+
+- Fixed trove classifiers not showing up on PyPI.
+- Fixed "human" pluralized as "humen" and not "humans".
+- Fixed "potato" pluralized as "potatos" and not "potatoes".
+
 0.3.0 (March 1, 2015)
 +++++++++++++++++++++
 
