@@ -145,15 +145,15 @@ def camelize(string, uppercase_first_letter=True):
     Examples::
 
         >>> camelize("device_type")
-        "DeviceType"
+        'DeviceType'
         >>> camelize("device_type", False)
-        "deviceType"
+        'deviceType'
 
     :func:`camelize` can be though as a inverse of :func:`underscore`, although
     there are some cases where that does not hold::
 
         >>> camelize(underscore("IOError"))
-        "IoError"
+        'IoError'
 
     :param uppercase_first_letter: if set to `True` :func:`camelize` converts
         strings to UpperCamelCase. If set to `False` :func:`camelize` produces
@@ -171,7 +171,7 @@ def dasherize(word):
     Example::
 
         >>> dasherize("puni_puni")
-        "puni-puni"
+        'puni-puni'
 
     """
     return word.replace('_', '-')
@@ -186,9 +186,9 @@ def humanize(word):
     Examples::
 
         >>> humanize("employee_salary")
-        "Employee salary"
+        'Employee salary'
         >>> humanize("author_id")
-        "Author"
+        'Author'
 
     """
     word = re.sub(r"_id$", "", word)
@@ -206,17 +206,17 @@ def ordinal(number):
     Examples::
 
         >>> ordinal(1)
-        "st"
+        'st'
         >>> ordinal(2)
-        "nd"
+        'nd'
         >>> ordinal(1002)
-        "nd"
+        'nd'
         >>> ordinal(1003)
-        "rd"
+        'rd'
         >>> ordinal(-11)
-        "th"
+        'th'
         >>> ordinal(-1021)
-        "st"
+        'st'
 
     """
     number = abs(int(number))
@@ -238,17 +238,17 @@ def ordinalize(number):
     Examples::
 
         >>> ordinalize(1)
-        "1st"
+        '1st'
         >>> ordinalize(2)
-        "2nd"
+        '2nd'
         >>> ordinalize(1002)
-        "1002nd"
+        '1002nd'
         >>> ordinalize(1003)
-        "1003rd"
+        '1003rd'
         >>> ordinalize(-11)
-        "-11th"
+        '-11th'
         >>> ordinalize(-1021)
-        "-1021st"
+        '-1021st'
 
     """
     return "%s%s" % (number, ordinal(number))
@@ -262,7 +262,7 @@ def parameterize(string, separator='-'):
     Example::
 
         >>> parameterize(u"Donald E. Knuth")
-        'donald-e-knuth'
+        u'donald-e-knuth'
 
     """
     string = transliterate(string)
@@ -285,13 +285,13 @@ def pluralize(word):
     Examples::
 
         >>> pluralize("post")
-        "posts"
+        'posts'
         >>> pluralize("octopus")
-        "octopi"
+        'octopi'
         >>> pluralize("sheep")
-        "sheep"
+        'sheep'
         >>> pluralize("CamelOctopus")
-        "CamelOctopi"
+        'CamelOctopi'
 
     """
     if not word or word.lower() in UNCOUNTABLES:
@@ -310,15 +310,15 @@ def singularize(word):
     Examples::
 
         >>> singularize("posts")
-        "post"
+        'post'
         >>> singularize("octopi")
-        "octopus"
+        'octopus'
         >>> singularize("sheep")
-        "sheep"
+        'sheep'
         >>> singularize("word")
-        "word"
+        'word'
         >>> singularize("CamelOctopi")
-        "CamelOctopus"
+        'CamelOctopus'
 
     """
     for inflection in UNCOUNTABLES:
@@ -339,11 +339,11 @@ def tableize(word):
     Examples::
 
         >>> tableize('RawScaledScorer')
-        "raw_scaled_scorers"
+        'raw_scaled_scorers'
         >>> tableize('egg_and_ham')
-        "egg_and_hams"
+        'egg_and_hams'
         >>> tableize('fancyCategory')
-        "fancy_categories"
+        'fancy_categories'
     """
     return pluralize(underscore(word))
 
@@ -357,13 +357,13 @@ def titleize(word):
     Examples::
 
       >>> titleize("man from the boondocks")
-      "Man From The Boondocks"
+      'Man From The Boondocks'
       >>> titleize("x-men: the last stand")
-      "X Men: The Last Stand"
+      'X Men: The Last Stand'
       >>> titleize("TheManWithoutAPast")
-      "The Man Without A Past"
+      'The Man Without A Past'
       >>> titleize("raiders_of_the_lost_ark")
-      "Raiders Of The Lost Ark"
+      'Raiders Of The Lost Ark'
 
     """
     return re.sub(
@@ -398,13 +398,13 @@ def underscore(word):
     Example::
 
         >>> underscore("DeviceType")
-        "device_type"
+        'device_type'
 
     As a rule of thumb you can think of :func:`underscore` as the inverse of
     :func:`camelize`, though there are cases where that does not hold::
 
         >>> camelize(underscore("IOError"))
-        "IoError"
+        'IoError'
 
     """
     word = re.sub(r"([A-Z]+)([A-Z][a-z])", r'\1_\2', word)
