@@ -1,2 +1,3 @@
 include README.rst LICENSE CHANGES.rst test_inflection.py
-
+graft docs
+prune docs/_build
