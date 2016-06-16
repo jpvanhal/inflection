@@ -17,7 +17,7 @@ Inflection is a port of `Ruby on Rails`_' `inflector`_ to Python.
 Resources
 ---------
 
-- `Documentation <http://inflection.readthedocs.org/>`_
+- `Documentation <https://inflection.readthedocs.io/>`_
 - `Issue Tracker <http://github.com/jpvanhal/inflection/issues>`_
 - `Code <http://github.com/jpvanhal/inflection>`_
 - `Development Version
