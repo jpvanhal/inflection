@@ -19,6 +19,7 @@ PLURALS = [
     (r"(?i)^(oxen)$", r'\1'),
     (r"(?i)^(ox)$", r'\1en'),
     (r"(?i)(m|l)ice$", r'\1ice'),
+    (r"(?i)(bl)ouse$", r'\1ouses'),
     (r"(?i)(m|l)ouse$", r'\1ice'),
     (r"(?i)(matr|vert|ind)(?:ix|ex)$", r'\1ices'),
     (r"(?i)(x|ch|ss|sh)$", r'\1es'),
