@@ -83,6 +83,7 @@ SINGULAR_TO_PLURAL = (
     ("status_code", "status_codes"),
     ("mouse", "mice"),
 
+    ("blouse", "blouses"),
     ("louse", "lice"),
     ("house", "houses"),
     ("octopus", "octopi"),
