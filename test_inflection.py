@@ -114,7 +114,7 @@ CAMEL_TO_UNDERSCORE = (
     ("Product",               "product"),
     ("SpecialGuest",          "special_guest"),
     ("ApplicationController", "application_controller"),
-    ("Area51Controller",      "area51_controller"),
+    ("Area51Controller",      "area_51_controller"),
 )
 
 CAMEL_TO_UNDERSCORE_WITHOUT_REVERSE = (
