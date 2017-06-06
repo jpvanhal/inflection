@@ -107,7 +107,8 @@ SINGULAR_TO_PLURAL = (
 
     ("cow", "kine"),
     ("database", "databases"),
-    ("human", "humans")
+    ("human", "humans"),
+    ("slice", "slices")
 )
 
 CAMEL_TO_UNDERSCORE = (
