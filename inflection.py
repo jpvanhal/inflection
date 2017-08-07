@@ -149,8 +149,8 @@ def camelize(string, uppercase_first_letter=True):
         >>> camelize("device_type", False)
         "deviceType"
 
-    :func:`camelize` can be thought of as a inverse of :func:`underscore`, although
-    there are some cases where that does not hold::
+    :func:`camelize` can be thought of as a inverse of :func:`underscore`,
+    although there are some cases where that does not hold::
 
         >>> camelize(underscore("IOError"))
         "IoError"
