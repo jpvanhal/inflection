@@ -327,8 +327,8 @@ def test_singularize_plural(singular, plural):
 
 @pytest.mark.parametrize(("singular", "plural"), SINGULAR_TO_PLURAL)
 def test_pluralize_plural(singular, plural):
-    assert plural == inflection.pluralize(plural)
-    assert plural.capitalize() == inflection.pluralize(plural.capitalize())
+    assert plural == inflection.pluralize(singular)
+    assert plural.capitalize() == inflection.pluralize(singular.capitalize())
 
 
 @pytest.mark.parametrize(("before", "titleized"), MIXTURE_TO_TITLEIZED)
