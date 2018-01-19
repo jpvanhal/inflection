@@ -74,7 +74,7 @@ SINGULARS = [
     (r"(?i)s$", ''),
 ]
 
-UNCOUNTABLES = set([
+UNCOUNTABLES = {
     'equipment',
     'fish',
     'information',
@@ -83,8 +83,7 @@ UNCOUNTABLES = set([
     'rice',
     'series',
     'sheep',
-    'species',
-])
+    'species'}
 
 
 def _irregular(singular, plural):
