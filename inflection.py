@@ -37,6 +37,7 @@ PLURALS = [
     (r"(?i)^(ax|test)is$", r'\1es'),
     (r"(?i)s$", 's'),
     (r"$", 's'),
+    (r"(?i)(sms)$", r'\1es'),
 ]
 
 SINGULARS = [
@@ -72,6 +73,7 @@ SINGULARS = [
     (r"(?i)(n)ews$", r'\1ews'),
     (r"(?i)(ss)$", r'\1'),
     (r"(?i)s$", ''),
+    (r"(?i)(sms)(es)?$", r'\1'),
 ]
 
 UNCOUNTABLES = set([
