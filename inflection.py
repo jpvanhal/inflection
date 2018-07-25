@@ -99,40 +99,42 @@ def _irregular(singular, plural):
 
     if singular[0].upper() == plural[0].upper():
         PLURALS.insert(0, (
-            r"(?i)(%s)%s$" % (singular[0], singular[1:]),
+            r"(?i)({}){}$".format(singular[0], singular[1:]),
             r'\1' + plural[1:]
         ))
         PLURALS.insert(0, (
-            r"(?i)(%s)%s$" % (plural[0], plural[1:]),
+            r"(?i)({}){}$".format(plural[0], plural[1:]),
             r'\1' + plural[1:]
         ))
         SINGULARS.insert(0, (
-            r"(?i)(%s)%s$" % (plural[0], plural[1:]),
+            r"(?i)({}){}$".format(plural[0], plural[1:]),
             r'\1' + singular[1:]
         ))
     else:
         PLURALS.insert(0, (
-            r"%s%s$" % (singular[0].upper(), caseinsensitive(singular[1:])),
+            r"{}{}$".format(singular[0].upper(),
+                            caseinsensitive(singular[1:])),
             plural[0].upper() + plural[1:]
         ))
         PLURALS.insert(0, (
-            r"%s%s$" % (singular[0].lower(), caseinsensitive(singular[1:])),
+            r"{}{}$".format(singular[0].lower(),
+                            caseinsensitive(singular[1:])),
             plural[0].lower() + plural[1:]
         ))
         PLURALS.insert(0, (
-            r"%s%s$" % (plural[0].upper(), caseinsensitive(plural[1:])),
+            r"{}{}$".format(plural[0].upper(), caseinsensitive(plural[1:])),
             plural[0].upper() + plural[1:]
         ))
         PLURALS.insert(0, (
-            r"%s%s$" % (plural[0].lower(), caseinsensitive(plural[1:])),
+            r"{}{}$".format(plural[0].lower(), caseinsensitive(plural[1:])),
             plural[0].lower() + plural[1:]
         ))
         SINGULARS.insert(0, (
-            r"%s%s$" % (plural[0].upper(), caseinsensitive(plural[1:])),
+            r"{}{}$".format(plural[0].upper(), caseinsensitive(plural[1:])),
             singular[0].upper() + singular[1:]
         ))
         SINGULARS.insert(0, (
-            r"%s%s$" % (plural[0].lower(), caseinsensitive(plural[1:])),
+            r"{}{}$".format(plural[0].lower(), caseinsensitive(plural[1:])),
             singular[0].lower() + singular[1:]
         ))
 
@@ -250,7 +252,7 @@ def ordinalize(number):
         "-1021st"
 
     """
-    return "%s%s" % (number, ordinal(number))
+    return "{}{}".format(number, ordinal(number))
 
 
 def parameterize(string, separator='-'):
@@ -272,7 +274,7 @@ def parameterize(string, separator='-'):
         # No more than one of the separator in a row.
         string = re.sub(r'%s{2,}' % re_sep, separator, string)
         # Remove leading/trailing separator.
-        string = re.sub(r"(?i)^%(sep)s|%(sep)s$" % {'sep': re_sep}, '', string)
+        string = re.sub(r"(?i)^{sep}|{sep}$".format(sep=re_sep), '', string)
 
     return string.lower()
 
