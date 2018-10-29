@@ -2,9 +2,10 @@ language: python
 python:
   - 2.7
   - pypy
-  - 3.3
   - 3.4
+  - 3.5
+  - 3.6
 script:
   - flake8 .
   - isort --recursive --diff . && isort --recursive --check-only .
-  - py.test
+  - pytest
