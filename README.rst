@@ -3,7 +3,7 @@ Inflection
 
 |build status|_
 
-.. |build status| image:: https://secure.travis-ci.org/jpvanhal/inflection.png?branch=master
+.. |build status| image:: https://travis-ci.org/jpvanhal/inflection.svg?branch=master
    :alt: Build Status
 .. _build status: http://travis-ci.org/jpvanhal/inflection
 
