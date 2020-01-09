@@ -70,7 +70,7 @@ SINGULAR_TO_PLURAL = (
     ("perspective", "perspectives"),
 
     ("ox", "oxen"),
-    ("passerby", "passersby")
+    ("passerby", "passersby"),
     ("photo", "photos"),
     ("buffalo", "buffaloes"),
     ("tomato", "tomatoes"),
