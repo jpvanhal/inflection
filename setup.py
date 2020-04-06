@@ -12,7 +12,7 @@ setup(
     long_description=open('README.rst').read(),
     author='Janne Vanhala',
     author_email='janne.vanhala@gmail.com',
-    url='http://github.com/jpvanhal/inflection',
+    url='https://github.com/jpvanhal/inflection',
     license='MIT',
     py_modules=['inflection'],
     zip_safe=False,
