@@ -1,6 +1,5 @@
 language: python
 python:
-  - pypy
   - 3.5
   - 3.6
   - 3.7
