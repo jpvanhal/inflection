@@ -5,7 +5,7 @@
 
     A port of Ruby on Rails' inflector to Python.
 
-    :copyright: (c) 2012-2015 by Janne Vanhala
+    :copyright: (c) 2012-2020 by Janne Vanhala
 
     :license: MIT, see LICENSE for more details.
 """
