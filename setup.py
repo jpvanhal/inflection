@@ -19,7 +19,7 @@ setup(
     license='MIT',
     py_modules=['inflection'],
     zip_safe=False,
-    python_requires='>=3.4',
+    python_requires='>=3.5',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
@@ -27,7 +27,6 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
