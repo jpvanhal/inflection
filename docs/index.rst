@@ -45,7 +45,13 @@ API Documentation
 .. autofunction:: underscore
 
 
-.. include:: ../CHANGES.rst
+Changelog
+---------
+
+You you can see the full list of changes between each Inflection release in
+`GitHub releases page`_.
+
+.. _GitHub releases page: https://github.com/jpvanhal/inflection/releases
 
 
 License
