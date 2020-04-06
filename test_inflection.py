@@ -191,6 +191,8 @@ MIXTURE_TO_TITLEIZED = (
     ("david's code",          "David's Code"),
     ("David's code",          "David's Code"),
     ("david's Code",          "David's Code"),
+    ("ana índia",             "Ana Índia"),
+    ("Ana Índia",             "Ana Índia"),
 )
 
 

@@ -370,9 +370,9 @@ def titleize(word):
 
     """
     return re.sub(
-        r"\b('?[a-z])",
+        r"\b('?\w)",
         lambda match: match.group(1).capitalize(),
-        humanize(underscore(word))
+        humanize(underscore(word)).title()
     )
 
 
