@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from setuptools import setup
+from setuptools import setup  # type: ignore
 
 import inflection
 
@@ -15,6 +15,7 @@ setup(
     url='https://github.com/jpvanhal/inflection',
     license='MIT',
     py_modules=['inflection'],
+    package_data={'inflection':['py.typed']},
     zip_safe=False,
     python_requires='>=3.5',
     classifiers=[
