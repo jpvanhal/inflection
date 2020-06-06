@@ -88,7 +88,7 @@ UNCOUNTABLES = {
     'species'}
 
 
-def _irregular(singular, plural):
+def _irregular(singular: str, plural: str) -> None:
     """
     A convenience function to add appropriate rules to plurals and singular
     for irregular words.
@@ -96,7 +96,7 @@ def _irregular(singular, plural):
     :param singular: irregular word in singular form
     :param plural: irregular word in plural form
     """
-    def caseinsensitive(string):
+    def caseinsensitive(string: str) -> str:
         return ''.join('[' + char + char.upper() + ']' for char in string)
 
     if singular[0].upper() == plural[0].upper():
@@ -141,7 +141,7 @@ def _irregular(singular, plural):
         ))
 
 
-def camelize(string, uppercase_first_letter=True):
+def camelize(string: str, uppercase_first_letter: bool = True) -> str:
     """
     Convert strings to CamelCase.
 
@@ -168,7 +168,7 @@ def camelize(string, uppercase_first_letter=True):
         return string[0].lower() + camelize(string)[1:]
 
 
-def dasherize(word):
+def dasherize(word: str) -> str:
     """Replace underscores with dashes in the string.
 
     Example::
@@ -180,7 +180,7 @@ def dasherize(word):
     return word.replace('_', '-')
 
 
-def humanize(word):
+def humanize(word: str) -> str:
     """
     Capitalize the first word and turn underscores into spaces and strip a
     trailing ``"_id"``, if any. Like :func:`titleize`, this is meant for
@@ -201,7 +201,7 @@ def humanize(word):
     return word
 
 
-def ordinal(number):
+def ordinal(number: int) -> str:
     """
     Return the suffix that should be added to a number to denote the position
     in an ordered sequence such as 1st, 2nd, 3rd, 4th.
@@ -233,7 +233,7 @@ def ordinal(number):
         }.get(number % 10, "th")
 
 
-def ordinalize(number):
+def ordinalize(number: int) -> str:
     """
     Turn a number into an ordinal string used to denote the position in an
     ordered sequence such as 1st, 2nd, 3rd, 4th.
@@ -257,7 +257,7 @@ def ordinalize(number):
     return "{}{}".format(number, ordinal(number))
 
 
-def parameterize(string, separator='-'):
+def parameterize(string: str, separator: str = '-') -> str:
     """
     Replace special characters in a string so that it may be used as part of a
     'pretty' URL.
@@ -281,7 +281,7 @@ def parameterize(string, separator='-'):
     return string.lower()
 
 
-def pluralize(word):
+def pluralize(word: str) -> str:
     """
     Return the plural form of a word.
 
@@ -306,7 +306,7 @@ def pluralize(word):
         return word
 
 
-def singularize(word):
+def singularize(word: str) -> str:
     """
     Return the singular form of a word, the reverse of :func:`pluralize`.
 
@@ -334,7 +334,7 @@ def singularize(word):
     return word
 
 
-def tableize(word):
+def tableize(word: str) -> str:
     """
     Create the name of a table like Rails does for models to table names. This
     method uses the :func:`pluralize` method on the last word in the string.
@@ -351,7 +351,7 @@ def tableize(word):
     return pluralize(underscore(word))
 
 
-def titleize(word):
+def titleize(word: str) -> str:
     """
     Capitalize all the words and replace some characters in the string to
     create a nicer looking title. :func:`titleize` is meant for creating pretty
@@ -376,7 +376,7 @@ def titleize(word):
     )
 
 
-def transliterate(string):
+def transliterate(string: str) -> str:
     """
     Replace non-ASCII characters with an ASCII approximation. If no
     approximation exists, the non-ASCII character is ignored. The string must
@@ -394,7 +394,7 @@ def transliterate(string):
     return normalized.encode('ascii', 'ignore').decode('ascii')
 
 
-def underscore(word):
+def underscore(word: str) -> str:
     """
     Make an underscored, lowercase form from the expression in the string.
 
