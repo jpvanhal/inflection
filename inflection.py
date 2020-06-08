@@ -165,7 +165,10 @@ def camelize(string: str, uppercase_first_letter: bool = True) -> str:
     if uppercase_first_letter:
         return re.sub(r"(?:^|_)(.)", lambda m: m.group(1).upper(), string)
     else:
-        return string[0].lower() + camelize(string)[1:]
+        if string.isupper():
+            return camelize(string)
+        else:
+            return string[0] + camelize(string)[1:]
 
 
 def dasherize(word: str) -> str:
