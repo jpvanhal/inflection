@@ -86,6 +86,7 @@ SINGULAR_TO_PLURAL = (
 
     ("louse", "lice"),
     ("house", "houses"),
+    ("cactus", "cacti"),
     ("octopus", "octopi"),
     ("virus", "viri"),
     ("alias", "aliases"),
