@@ -290,11 +290,11 @@ def pluralize(word: str) -> str:
         >>> pluralize("posts")
         'posts'
         >>> pluralize("octopus")
-        'octopi'
+        'octopuses'
         >>> pluralize("sheep")
         'sheep'
         >>> pluralize("CamelOctopus")
-        'CamelOctopi'
+        'CamelOctopuses'
 
     """
     if not word or word.lower() in UNCOUNTABLES:
@@ -314,14 +314,14 @@ def singularize(word: str) -> str:
 
         >>> singularize("posts")
         'post'
-        >>> singularize("octopi")
-        'octopus'
+        >>> singularize("octopus")
+        'octopuses'
         >>> singularize("sheep")
         'sheep'
         >>> singularize("word")
         'word'
-        >>> singularize("CamelOctopi")
-        'CamelOctopus'
+        >>> singularize("CamelOctopus")
+        'CamelOctopuses'
 
     """
     for inflection in UNCOUNTABLES:
