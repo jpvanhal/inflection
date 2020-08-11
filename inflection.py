@@ -394,7 +394,7 @@ def transliterate(string: str) -> str:
     return normalized.encode('ascii', 'ignore').decode('ascii')
 
 
-def underscore(word: str) -> str:
+def underscore(word: str, split_numbers: bool = False) -> str:
     """
     Make an underscored, lowercase form from the expression in the string.
 
@@ -402,6 +402,14 @@ def underscore(word: str) -> str:
 
         >>> underscore("DeviceType")
         'device_type'
+
+    The parameter ``split_numbers`` can be used to insert underscores between
+    numbers and alphabet characters.
+
+    Example::
+
+        >>> underscore('xyz123', split_numbers=True)
+        'xyz_123'
 
     As a rule of thumb you can think of :func:`underscore` as the inverse of
     :func:`camelize`, though there are cases where that does not hold::
@@ -411,6 +419,9 @@ def underscore(word: str) -> str:
 
     """
     word = re.sub(r"([A-Z]+)([A-Z][a-z])", r'\1_\2', word)
+    if split_numbers:
+        word = re.sub(r"([a-zA-Z])(\d)", r'\1_\2', word)
+        word = re.sub(r"(\d)([a-z])", r'\1_\2', word)
     word = re.sub(r"([a-z\d])([A-Z])", r'\1_\2', word)
     word = word.replace("-", "_")
     return word.lower()

@@ -125,6 +125,13 @@ CAMEL_TO_UNDERSCORE_WITHOUT_REVERSE = (
     ("HTML",                  "html"),
 )
 
+CAMEL_TO_UNDERSCORE_SPLITTING_NUMBERS = (
+    ("xyz123", "xyz_123"),
+    ("xyZ123", "xy_z_123"),
+    ("xy123z", "xy_123_z"),
+    ("xy123Z", "xy_123_z")
+)
+
 STRING_TO_PARAMETERIZED = (
     (u"Donald E. Knuth", "donald-e-knuth"),
     (
@@ -358,6 +365,14 @@ def test_camelize_with_underscores():
 )
 def test_underscore(camel, underscore):
     assert underscore == inflection.underscore(camel)
+
+
+@pytest.mark.parametrize(
+    ("camel", "underscore"),
+    CAMEL_TO_UNDERSCORE_SPLITTING_NUMBERS
+)
+def test_underscore_split_numbers(camel, underscore):
+    assert underscore == inflection.underscore(camel, split_numbers=True)
 
 
 @pytest.mark.parametrize(
