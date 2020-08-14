@@ -14,7 +14,7 @@ setup(
     author_email='janne.vanhala@gmail.com',
     url='https://github.com/jpvanhal/inflection',
     license='MIT',
-    py_modules=['inflection'],
+    packages=['inflection'],
     package_data={'inflection': ['py.typed']},
     zip_safe=False,
     python_requires='>=3.5',
