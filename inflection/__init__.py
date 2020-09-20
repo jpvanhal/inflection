@@ -13,6 +13,9 @@ import re
 import unicodedata
 
 __version__ = '0.5.1'
+__all__ = ('camelize', 'dasherize', 'humanize', 'ordinal', 'ordinalize',
+           'parameterize', 'pluralize', 'singularize', 'tableize', 'titleize',
+           'transliterate', 'underscore')
 
 PLURALS = [
     (r"(?i)(quiz)$", r'\1zes'),
