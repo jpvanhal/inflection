@@ -85,7 +85,8 @@ UNCOUNTABLES = {
     'rice',
     'series',
     'sheep',
-    'species'}
+    'species',
+    'diabetes'}
 
 
 def _irregular(singular: str, plural: str) -> None:
