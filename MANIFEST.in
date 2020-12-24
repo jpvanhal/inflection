@@ -1,3 +1,4 @@
 include README.rst LICENSE test_inflection.py
+graft inflection
 graft docs
 prune docs/_build
