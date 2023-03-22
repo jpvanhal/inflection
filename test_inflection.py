@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 import pytest
+import typing
 
 import inflection
 
-SINGULAR_TO_PLURAL = (
+TestParamaters = typing.Sequence[typing.Tuple[str, str]]
+
+SINGULAR_TO_PLURAL: TestParamaters = (
     ("search", "searches"),
     ("switch", "switches"),
     ("fix", "fixes"),
@@ -111,21 +114,21 @@ SINGULAR_TO_PLURAL = (
     ("human", "humans")
 )
 
-CAMEL_TO_UNDERSCORE = (
+CAMEL_TO_UNDERSCORE: TestParamaters = (
     ("Product",               "product"),
     ("SpecialGuest",          "special_guest"),
     ("ApplicationController", "application_controller"),
     ("Area51Controller",      "area51_controller"),
 )
 
-CAMEL_TO_UNDERSCORE_WITHOUT_REVERSE = (
+CAMEL_TO_UNDERSCORE_WITHOUT_REVERSE: TestParamaters = (
     ("HTMLTidy",              "html_tidy"),
     ("HTMLTidyGenerator",     "html_tidy_generator"),
     ("FreeBSD",               "free_bsd"),
     ("HTML",                  "html"),
 )
 
-STRING_TO_PARAMETERIZED = (
+STRING_TO_PARAMETERIZED: TestParamaters = (
     (u"Donald E. Knuth", "donald-e-knuth"),
     (
         u"Random text with *(bad)* characters",
@@ -139,7 +142,7 @@ STRING_TO_PARAMETERIZED = (
     (u"Test with malformed utf8 \251", "test-with-malformed-utf8"),
 )
 
-STRING_TO_PARAMETERIZE_WITH_NO_SEPARATOR = (
+STRING_TO_PARAMETERIZE_WITH_NO_SEPARATOR: TestParamaters = (
     (u"Donald E. Knuth", "donaldeknuth"),
     (u"With-some-dashes", "with-some-dashes"),
     (u"Random text with *(bad)* characters", "randomtextwithbadcharacters"),
@@ -150,7 +153,7 @@ STRING_TO_PARAMETERIZE_WITH_NO_SEPARATOR = (
     (u"Test with malformed utf8 \251", "testwithmalformedutf8"),
 )
 
-STRING_TO_PARAMETERIZE_WITH_UNDERSCORE = (
+STRING_TO_PARAMETERIZE_WITH_UNDERSCORE: TestParamaters = (
     (u"Donald E. Knuth", "donald_e_knuth"),
     (
         u"Random text with *(bad)* characters",
@@ -165,7 +168,7 @@ STRING_TO_PARAMETERIZE_WITH_UNDERSCORE = (
     (u"Test with malformed utf8 \251", "test_with_malformed_utf8"),
 )
 
-STRING_TO_PARAMETERIZED_AND_NORMALIZED = (
+STRING_TO_PARAMETERIZED_AND_NORMALIZED: TestParamaters = (
     (u"Malmö", "malmo"),
     (u"Garçons", "garcons"),
     (u"Ops\331", "opsu"),
@@ -174,13 +177,13 @@ STRING_TO_PARAMETERIZED_AND_NORMALIZED = (
     (u"Japanese: 日本語", "japanese"),
 )
 
-UNDERSCORE_TO_HUMAN = (
+UNDERSCORE_TO_HUMAN: TestParamaters = (
     ("employee_salary",       "Employee salary"),
     ("employee_id",           "Employee"),
     ("underground",           "Underground"),
 )
 
-MIXTURE_TO_TITLEIZED = (
+MIXTURE_TO_TITLEIZED: TestParamaters = (
     ('active_record',         'Active Record'),
     ('ActiveRecord',          'Active Record'),
     ('action web service',    'Action Web Service'),
@@ -196,7 +199,7 @@ MIXTURE_TO_TITLEIZED = (
 )
 
 
-ORDINAL_NUMBERS = (
+ORDINAL_NUMBERS: TestParamaters = (
     ("-1", "-1st"),
     ("-2", "-2nd"),
     ("-3", "-3rd"),
@@ -260,13 +263,13 @@ ORDINAL_NUMBERS = (
     ("1001", "1001st"),
 )
 
-UNDERSCORES_TO_DASHES = (
+UNDERSCORES_TO_DASHES: TestParamaters = (
     ("street",                "street"),
     ("street_address",        "street-address"),
     ("person_street_address", "person-street-address"),
 )
 
-STRING_TO_TABLEIZE = (
+STRING_TO_TABLEIZE: TestParamaters = (
     ("person", "people"),
     ("Country", "countries"),
     ("ChildToy", "child_toys"),
@@ -287,7 +290,7 @@ def test_pluralize_empty_string():
     ("word", ),
     [(word,) for word in inflection.UNCOUNTABLES]
 )
-def test_uncountability(word):
+def test_uncountability(word: str):
     assert word == inflection.singularize(word)
     assert word == inflection.pluralize(word)
     assert inflection.pluralize(word) == inflection.singularize(word)
@@ -317,30 +320,30 @@ def test_uncountable_word_is_not_greedy():
 
 
 @pytest.mark.parametrize(("singular", "plural"), SINGULAR_TO_PLURAL)
-def test_pluralize_singular(singular, plural):
+def test_pluralize_singular(singular: str, plural: str):
     assert plural == inflection.pluralize(singular)
     assert plural.capitalize() == inflection.pluralize(singular.capitalize())
 
 
 @pytest.mark.parametrize(("singular", "plural"), SINGULAR_TO_PLURAL)
-def test_singularize_plural(singular, plural):
+def test_singularize_plural(singular: str, plural: str):
     assert singular == inflection.singularize(plural)
     assert singular.capitalize() == inflection.singularize(plural.capitalize())
 
 
 @pytest.mark.parametrize(("singular", "plural"), SINGULAR_TO_PLURAL)
-def test_pluralize_plural(singular, plural):
+def test_pluralize_plural(singular: str, plural: str):
     assert plural == inflection.pluralize(plural)
     assert plural.capitalize() == inflection.pluralize(plural.capitalize())
 
 
 @pytest.mark.parametrize(("before", "titleized"), MIXTURE_TO_TITLEIZED)
-def test_titleize(before, titleized):
+def test_titleize(before: str, titleized: str):
     assert titleized == inflection.titleize(before)
 
 
 @pytest.mark.parametrize(("camel", "underscore"), CAMEL_TO_UNDERSCORE)
-def test_camelize(camel, underscore):
+def test_camelize(camel: str, underscore: str):
     assert camel == inflection.camelize(underscore)
 
 
@@ -356,7 +359,7 @@ def test_camelize_with_underscores():
     ("camel", "underscore"),
     CAMEL_TO_UNDERSCORE + CAMEL_TO_UNDERSCORE_WITHOUT_REVERSE
 )
-def test_underscore(camel, underscore):
+def test_underscore(camel: str, underscore: str):
     assert underscore == inflection.underscore(camel)
 
 
@@ -364,7 +367,7 @@ def test_underscore(camel, underscore):
     ("some_string", "parameterized_string"),
     STRING_TO_PARAMETERIZED
 )
-def test_parameterize(some_string, parameterized_string):
+def test_parameterize(some_string: str, parameterized_string: str):
     assert parameterized_string == inflection.parameterize(some_string)
 
 
@@ -372,7 +375,7 @@ def test_parameterize(some_string, parameterized_string):
     ("some_string", "parameterized_string"),
     STRING_TO_PARAMETERIZED_AND_NORMALIZED
 )
-def test_parameterize_and_normalize(some_string, parameterized_string):
+def test_parameterize_and_normalize(some_string: str, parameterized_string: str):
     assert parameterized_string == inflection.parameterize(some_string)
 
 
@@ -380,7 +383,7 @@ def test_parameterize_and_normalize(some_string, parameterized_string):
     ("some_string", "parameterized_string"),
     STRING_TO_PARAMETERIZE_WITH_UNDERSCORE
 )
-def test_parameterize_with_custom_separator(some_string, parameterized_string):
+def test_parameterize_with_custom_separator(some_string: str, parameterized_string: str):
     assert parameterized_string == inflection.parameterize(some_string, '_')
 
 
@@ -389,8 +392,8 @@ def test_parameterize_with_custom_separator(some_string, parameterized_string):
     STRING_TO_PARAMETERIZED
 )
 def test_parameterize_with_multi_character_separator(
-    some_string,
-    parameterized_string
+    some_string: str,
+    parameterized_string: str
 ):
     assert (
         parameterized_string.replace('-', '__sep__') ==
@@ -402,30 +405,30 @@ def test_parameterize_with_multi_character_separator(
     ("some_string", "parameterized_string"),
     STRING_TO_PARAMETERIZE_WITH_NO_SEPARATOR
 )
-def test_parameterize_with_no_separator(some_string, parameterized_string):
+def test_parameterize_with_no_separator(some_string: str, parameterized_string: str):
     assert parameterized_string == inflection.parameterize(some_string, '')
 
 
 @pytest.mark.parametrize(("underscore", "human"), UNDERSCORE_TO_HUMAN)
-def test_humanize(underscore, human):
+def test_humanize(underscore: str, human: str):
     assert human == inflection.humanize(underscore)
 
 
 @pytest.mark.parametrize(("number", "ordinalized"), ORDINAL_NUMBERS)
-def test_ordinal(number, ordinalized):
-    assert ordinalized == number + inflection.ordinal(number)
+def test_ordinal(number: str, ordinalized: str):
+    assert ordinalized == number + inflection.ordinal(int(number))
 
 
 @pytest.mark.parametrize(("number", "ordinalized"), ORDINAL_NUMBERS)
-def test_ordinalize(number, ordinalized):
-    assert ordinalized == inflection.ordinalize(number)
+def test_ordinalize(number: str, ordinalized: str):
+    assert ordinalized == inflection.ordinalize(int(number))
 
 
 @pytest.mark.parametrize(("input", "expected"), UNDERSCORES_TO_DASHES)
-def test_dasherize(input, expected):
+def test_dasherize(input: str, expected: str):
     assert inflection.dasherize(input) == expected
 
 
 @pytest.mark.parametrize(("string", "tableized"), STRING_TO_TABLEIZE)
-def test_tableize(string, tableized):
+def test_tableize(string: str, tableized: str):
     assert inflection.tableize(string) == tableized
