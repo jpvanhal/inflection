@@ -12,6 +12,7 @@
 import re
 import typing
 import unicodedata
+from typing import Union
 
 __version__ = '0.5.1'
 
@@ -89,6 +90,26 @@ UNCOUNTABLES: typing.Set[str] = {
     'series',
     'sheep',
     'species'}
+
+
+ACRONYMS = set()
+__acronyms_regex = re.compile(r'a^')  # initial regex matches nothing
+
+
+def add_acronym(acronym: Union[str, list[str]]) -> None:
+    """
+    Add an acronym to be capitalized by :func:`humanize`
+
+    :param acronym: a single string or a list of strings representing the acronyms to add (case is ignored)
+    """
+    global ACRONYMS, __acronyms_regex
+    if type(acronym) is str:
+        acronym = acronym.lower()
+    elif type(acronym) is list:
+        acronym = map(lambda s: s.lower(), acronym)
+    ACRONYMS.update(acronym)
+    pattern = '(' + '|'.join(ACRONYMS) + ')'
+    __acronyms_regex = re.compile(pattern, re.IGNORECASE)
 
 
 def _irregular(singular: str, plural: str) -> None:
@@ -201,6 +222,7 @@ def humanize(word: str) -> str:
     word = word.replace('_', ' ')
     word = re.sub(r"(?i)([a-z\d]*)", lambda m: m.group(1).lower(), word)
     word = re.sub(r"^\w", lambda m: m.group(0).upper(), word)
+    word = __acronyms_regex.sub(lambda m: m.group(0).upper(), word)
     return word
 
 
