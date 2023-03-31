@@ -10,11 +10,14 @@
     :license: MIT, see LICENSE for more details.
 """
 import re
+import typing
 import unicodedata
 
 __version__ = '0.5.1'
 
-PLURALS = [
+RegexReplaceList = typing.List[typing.Tuple[str, str]]
+
+PLURALS: RegexReplaceList = [
     (r"(?i)(quiz)$", r'\1zes'),
     (r"(?i)^(oxen)$", r'\1'),
     (r"(?i)^(ox)$", r'\1en'),
@@ -40,7 +43,7 @@ PLURALS = [
     (r"$", 's'),
 ]
 
-SINGULARS = [
+SINGULARS: RegexReplaceList = [
     (r"(?i)(database)s$", r'\1'),
     (r"(?i)(quiz)zes$", r'\1'),
     (r"(?i)(matr)ices$", r'\1ix'),
@@ -76,7 +79,7 @@ SINGULARS = [
     (r"(?i)s$", ''),
 ]
 
-UNCOUNTABLES = {
+UNCOUNTABLES: typing.Set[str] = {
     'equipment',
     'fish',
     'information',
