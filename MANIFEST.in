@@ -1,3 +1,4 @@
 include README.rst LICENSE test_inflection.py
+recursive-include inflection py.typed
 graft docs
 prune docs/_build
