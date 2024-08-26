@@ -112,7 +112,9 @@ SINGULAR_TO_PLURAL: TestParameters = (
 
     ("cow", "kine"),
     ("database", "databases"),
-    ("human", "humans")
+    ("human", "humans"),
+    ("goose", "geese"),
+    ("foot", "feet")
 )
 
 CAMEL_TO_UNDERSCORE: TestParameters = (

@@ -88,7 +88,9 @@ UNCOUNTABLES: typing.Set[str] = {
     'rice',
     'series',
     'sheep',
-    'species'}
+    'species',
+    'diabetes'
+}
 
 
 def _irregular(singular: str, plural: str) -> None:
@@ -419,11 +421,15 @@ def underscore(word: str) -> str:
     return word.lower()
 
 
+_irregular('cow', 'kine')
+_irregular('child', 'children')
+_irregular('foot', 'feet')
+_irregular('goose', 'geese')
+_irregular('move', 'moves')
 _irregular('person', 'people')
+_irregular('sex', 'sexes')
+_irregular('zombie', 'zombies')
+
+# more specific rules at the end
 _irregular('man', 'men')
 _irregular('human', 'humans')
-_irregular('child', 'children')
-_irregular('sex', 'sexes')
-_irregular('move', 'moves')
-_irregular('cow', 'kine')
-_irregular('zombie', 'zombies')
