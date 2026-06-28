@@ -402,6 +402,13 @@ def test_parameterize_with_multi_character_separator(
     )
 
 
+def test_parameterize_with_multi_character_separator_partial_collapse() -> None:
+    # Regression test: multi-character separator should not consume
+    # non-separator characters that happen to overlap with separator chars.
+    # '__' is a 2-char separator, so '___' = one separator + one literal '_'.
+    assert 'test___case' == inflection.parameterize('test___case', '__')
+
+
 @pytest.mark.parametrize(
     ("some_string", "parameterized_string"),
     STRING_TO_PARAMETERIZE_WITH_NO_SEPARATOR
