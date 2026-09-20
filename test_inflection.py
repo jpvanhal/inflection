@@ -89,6 +89,10 @@ SINGULAR_TO_PLURAL: TestParameters = (
     ("mouse", "mice"),
 
     ("louse", "lice"),
+    ("slice", "slices"),
+    ("gas", "gases"),
+    ("bias", "biases"),
+    ("atlas", "atlases"),
     ("house", "houses"),
     ("octopus", "octopi"),
     ("virus", "viri"),
@@ -433,3 +437,11 @@ def test_dasherize(input: str, expected: str) -> None:
 @pytest.mark.parametrize(("string", "tableized"), STRING_TO_TABLEIZE)
 def test_tableize(string: str, tableized: str) -> None:
     assert inflection.tableize(string) == tableized
+
+
+def test_singularize_slice_gas_bias_atlas_identity() -> None:
+    """Regression: already-singular forms must not be mangled (#24, #38)."""
+    assert inflection.singularize("slice") == "slice"
+    assert inflection.singularize("gas") == "gas"
+    assert inflection.singularize("bias") == "bias"
+    assert inflection.singularize("atlas") == "atlas"
