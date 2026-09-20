@@ -50,14 +50,14 @@ SINGULARS: RegexReplaceList = [
     (r"(?i)(vert|ind)ices$", r'\1ex'),
     (r"(?i)(passer)sby$", r'\1by'),
     (r"(?i)^(ox)en", r'\1'),
-    (r"(?i)(alias|status)(es)?$", r'\1'),
+    (r"(?i)(alias|status|gas|bias|atlas)(es)?$", r'\1'),
     (r"(?i)(octop|vir)(us|i)$", r'\1us'),
     (r"(?i)^(a)x[ie]s$", r'\1xis'),
     (r"(?i)(cris|test)(is|es)$", r'\1is'),
     (r"(?i)(shoe)s$", r'\1'),
     (r"(?i)(o)es$", r'\1'),
     (r"(?i)(bus)(es)?$", r'\1'),
-    (r"(?i)(m|l)ice$", r'\1ouse'),
+    (r"(?i)(?<![sS])(m|l)ice$", r'\1ouse'),  # not "slice"
     (r"(?i)(x|ch|ss|sh)es$", r'\1'),
     (r"(?i)(m)ovies$", r'\1ovie'),
     (r"(?i)(s)eries$", r'\1eries'),
@@ -427,3 +427,7 @@ _irregular('sex', 'sexes')
 _irregular('move', 'moves')
 _irregular('cow', 'kine')
 _irregular('zombie', 'zombies')
+_irregular('slice', 'slices')
+_irregular('gas', 'gases')
+_irregular('bias', 'biases')
+_irregular('atlas', 'atlases')
