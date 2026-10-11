@@ -352,6 +352,11 @@ def test_camelize_with_lower_downcases_the_first_letter() -> None:
     assert 'capital' == inflection.camelize('Capital', False)
 
 
+@pytest.mark.parametrize("uppercase_first_letter", [True, False])
+def test_camelize_empty_string(uppercase_first_letter: bool) -> None:
+    assert inflection.camelize('', uppercase_first_letter) == ''
+
+
 def test_camelize_with_underscores() -> None:
     assert "CamelCase" == inflection.camelize('Camel_Case')
 
