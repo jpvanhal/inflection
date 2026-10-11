@@ -273,11 +273,11 @@ def parameterize(string: str, separator: str = '-') -> str:
     """
     string = transliterate(string)
     # Turn unwanted chars into the separator
-    string = re.sub(r"(?i)[^a-z0-9\-_]+", separator, string)
+    string = re.sub(r"(?i)[^a-z0-9\-_]+", lambda match: separator, string)
     if separator:
         re_sep = re.escape(separator)
         # No more than one of the separator in a row.
-        string = re.sub(r'%s{2,}' % re_sep, separator, string)
+        string = re.sub(r'%s{2,}' % re_sep, lambda match: separator, string)
         # Remove leading/trailing separator.
         string = re.sub(r"(?i)^{sep}|{sep}$".format(sep=re_sep), '', string)
 

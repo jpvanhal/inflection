@@ -402,6 +402,15 @@ def test_parameterize_with_multi_character_separator(
     )
 
 
+@pytest.mark.parametrize("separator", ["\\", r"\1", r"\n", r"\g<name>"])
+@pytest.mark.parametrize("text", ["One Two", "!One Two!"])
+def test_parameterize_with_literal_separator(
+    text: str, separator: str
+) -> None:
+    expected = "one" + separator + "two"
+    assert inflection.parameterize(text, separator) == expected
+
+
 @pytest.mark.parametrize(
     ("some_string", "parameterized_string"),
     STRING_TO_PARAMETERIZE_WITH_NO_SEPARATOR
