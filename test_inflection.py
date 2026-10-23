@@ -65,6 +65,7 @@ SINGULAR_TO_PLURAL: TestParameters = (
 
     ("old_news", "old_news"),
     ("news", "news"),
+    ("this", "this"),
 
     ("series", "series"),
     ("species", "species"),
