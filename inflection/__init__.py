@@ -88,6 +88,7 @@ UNCOUNTABLES: typing.Set[str] = {
     'rice',
     'series',
     'sheep',
+    'this',
     'species'}
 
 
