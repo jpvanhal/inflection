@@ -18,6 +18,7 @@ __version__ = '0.5.1'
 RegexReplaceList = typing.List[typing.Tuple[str, str]]
 
 PLURALS: RegexReplaceList = [
+    (r"(?i)(gas|bias|atlas)$", r'\1es'),
     (r"(?i)(quiz)$", r'\1zes'),
     (r"(?i)^(oxen)$", r'\1'),
     (r"(?i)^(ox)$", r'\1en'),
@@ -44,6 +45,7 @@ PLURALS: RegexReplaceList = [
 ]
 
 SINGULARS: RegexReplaceList = [
+    (r"(?i)(gas|bias|atlas)(es)?$", r'\1'),
     (r"(?i)(database)s$", r'\1'),
     (r"(?i)(quiz)zes$", r'\1'),
     (r"(?i)(matr)ices$", r'\1ix'),
