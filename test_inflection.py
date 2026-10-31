@@ -433,3 +433,18 @@ def test_dasherize(input: str, expected: str) -> None:
 @pytest.mark.parametrize(("string", "tableized"), STRING_TO_TABLEIZE)
 def test_tableize(string: str, tableized: str) -> None:
     assert inflection.tableize(string) == tableized
+
+
+@pytest.mark.parametrize("singular, plural", [
+    ("gas", "gases"),
+    ("bias", "biases"),
+    ("atlas", "atlases"),
+    ("Gas", "Gases"),
+    ("Bias", "Biases"),
+    ("Atlas", "Atlases"),
+])
+def test_singular_nouns_ending_in_single_s(singular: str, plural: str) -> None:
+    assert inflection.singularize(singular) == singular
+    assert inflection.singularize(plural) == singular
+    assert inflection.pluralize(singular) == plural
+    assert inflection.pluralize(plural) == plural
