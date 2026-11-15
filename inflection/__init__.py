@@ -85,6 +85,7 @@ UNCOUNTABLES: typing.Set[str] = {
     'information',
     'jeans',
     'money',
+    'pasta',
     'rice',
     'series',
     'sheep',
