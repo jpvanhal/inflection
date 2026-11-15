@@ -104,6 +104,7 @@ SINGULAR_TO_PLURAL: TestParameters = (
     ("crisis", "crises"),
 
     ("rice", "rice"),
+    ("pasta", "pasta"),
     ("shoe", "shoes"),
 
     ("horse", "horses"),
