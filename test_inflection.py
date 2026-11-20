@@ -185,6 +185,14 @@ UNDERSCORE_TO_HUMAN: TestParameters = (
 )
 
 MIXTURE_TO_TITLEIZED: TestParameters = (
+    ('2ND PART', '2nd Part'),
+    ('1st place', '1st Place'),
+    ('the_23RD_day', 'The 23rd Day'),
+    ('42Nd_street', '42nd Street'),
+    ('100TH BIRTHDAY', '100th Birthday'),
+    ('21STCentury', '21st Century'),
+    ('1STREET', '1 Street'),
+    ('1Stadium', '1 Stadium'),
     ('active_record',         'Active Record'),
     ('ActiveRecord',          'Active Record'),
     ('action web service',    'Action Web Service'),

@@ -370,13 +370,18 @@ def titleize(word: str) -> str:
       'The Man Without A Past'
       >>> titleize("raiders_of_the_lost_ark")
       'Raiders Of The Lost Ark'
+      >>> titleize("2ND PART")
+      '2nd Part'
 
     """
-    return re.sub(
+    ordinal = r"\d+(?i:st|nd|rd|th)(?=$|[\W_]|[A-Z][a-z])"
+    word = re.sub(ordinal, lambda match: match.group(0).lower(), word)
+    title = re.sub(
         r"\b('?\w)",
         lambda match: match.group(1).capitalize(),
         humanize(underscore(word)).title()
     )
+    return re.sub(ordinal, lambda match: match.group(0).lower(), title)
 
 
 def transliterate(string: str) -> str:
