@@ -35,6 +35,11 @@ SINGULAR_TO_PLURAL: TestParameters = (
     ("safe", "saves"),
     ("half", "halves"),
 
+    ("reserve", "reserves"),
+    ("nature_reserve", "nature_reserves"),
+    ("wolf", "wolves"),
+    ("calf", "calves"),
+
     ("move", "moves"),
 
     ("salesperson", "salespeople"),

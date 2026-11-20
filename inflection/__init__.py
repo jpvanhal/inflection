@@ -62,6 +62,7 @@ SINGULARS: RegexReplaceList = [
     (r"(?i)(m)ovies$", r'\1ovie'),
     (r"(?i)(s)eries$", r'\1eries'),
     (r"(?i)([^aeiouy]|qu)ies$", r'\1y'),
+    (r"(?i)(reserve)s$", r'\1'),
     (r"(?i)([lr])ves$", r'\1f'),
     (r"(?i)(tive)s$", r'\1'),
     (r"(?i)(hive)s$", r'\1'),
