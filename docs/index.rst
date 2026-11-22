@@ -38,6 +38,7 @@ API Documentation
 .. autofunction:: ordinalize
 .. autofunction:: parameterize
 .. autofunction:: pluralize
+.. autofunction:: pluralize_count
 .. autofunction:: singularize
 .. autofunction:: tableize
 .. autofunction:: titleize

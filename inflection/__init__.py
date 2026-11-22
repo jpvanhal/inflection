@@ -309,6 +309,30 @@ def pluralize(word: str) -> str:
         return word
 
 
+def pluralize_count(count: int, singular: str) -> str:
+    """
+    Return a count followed by the appropriate form of a singular word.
+
+    Only a count of one uses *singular* unchanged; other counts use
+    :func:`pluralize`. To get a plural word without a count, use
+    :func:`pluralize` directly.
+
+    Examples::
+
+        >>> pluralize_count(1, "cat")
+        '1 cat'
+        >>> pluralize_count(2, "cat")
+        '2 cats'
+        >>> pluralize_count(0, "person")
+        '0 people'
+        >>> pluralize_count(3, "sheep")
+        '3 sheep'
+
+    """
+    word = singular if count == 1 else pluralize(singular)
+    return "{} {}".format(count, word)
+
+
 def singularize(word: str) -> str:
     """
     Return the singular form of a word, the reverse of :func:`pluralize`.
